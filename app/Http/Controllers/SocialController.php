@@ -15,7 +15,7 @@
    $getInfo = Socialite::driver($provider)->user(); 
    $user = $this->createUser($getInfo,$provider); 
    auth()->login($user); 
-   return redirect()->to('/');
+   return redirect()->to('/home');
  }
  function createUser($getInfo,$provider){
  $user = User::where('provider_id', $getInfo->id)->first();
