@@ -12,7 +12,6 @@
  }
  public function callback($provider)
  {
-    $request->session()->put('state',Str::random(40));
    $getInfo = Socialite::driver($provider)->stateless()->user(); 
    $user = $this->createUser($getInfo,$provider); 
    auth()->login($user); 
