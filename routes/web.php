@@ -21,3 +21,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/getAPI','APIProcess@getAPI')->name('getAPI');
 Route::resource('user','ProfileController');
 Route::resource('card','CardController');
+Route::get('/auth/redirect/{provider}', 'SocialController@redirect');
+Route::get('/callback/{provider}', 'SocialController@callback');
