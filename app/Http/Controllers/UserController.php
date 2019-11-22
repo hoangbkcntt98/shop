@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\CreditCard;
 use App\Http\Resources\User as UserResource;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Hash;
@@ -92,5 +93,11 @@ class UserController extends Controller
             return redirect('login');
 
         }
+    }
+    public function getpayment($id)
+    {
+        $user = User::findOrFail($id);
+        $cards = $user->creditcards;
+        return response()->json($cards);
     }
 }

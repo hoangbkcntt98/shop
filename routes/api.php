@@ -22,3 +22,4 @@ Route::post('user','UserController@store');
 Route::put('user','UserController@store');
 Route::delete('user/{id}','UserController@destroy');
 Route::get('login','UserController@login')->name('apilogin');
+Route::get('/user/{id}/payment','UserController@getpayment');
